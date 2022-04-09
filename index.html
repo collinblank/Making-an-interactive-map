@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Map</title>
+    <!--External Style Sheet-->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!--Outside Style Sheets Listed Here-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <!--External JS File (defer)-->
+    <script src="./assets/index.js" defer></script>
+
+    <!--Leaflet JS File-->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!--JQuery-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.7.1.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="dropdown">
+        <form>
+          <select id="business">
+            <option value="restaurant">Restaurants</option>
+            <option value="coffee">Coffee Shops</option>
+            <option value="hotel">Hotels</option>
+            <option value="Grocery Store">Grocery Store</option>
+          </select>
+          <button id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+      $(window).on("load", function () {
+        $(".loader-wrapper").fadeOut(6000);
+      });
+    </script>
+    <div id="map"></div>
+    <!--Stylesheet-->
+    <style>
+      #map {
+        height: 600px;
+        z-index: 1;
+        margin-top: 1em;
+      }
+    </style>
+  </body>
+</html>
